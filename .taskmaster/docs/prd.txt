@@ -1,0 +1,46 @@
+# Overview
+开发一个自动化的 PDF 转 Markdown 系统。该系统能够将用户上传的 PDF 文档转换为一系列图像，然后利用先进的 Gemini 2.5 Flash API 对这些图像进行光学字符识别 (OCR)，提取文本内容，并最终将提取的文本转换为结构化的 Markdown 格式。
+
+# Core Features
+- **PDF 到图像转换**：将 PDF 文档的每一页转换为高质量的图像文件。
+- **图像 OCR**：利用 Gemini 2.5 Flash API 对图像进行 OCR，提取文本内容。
+- **文本到 Markdown 转换**：将提取的文本转换为结构化的 Markdown 格式，包括标题、段落、列表等。
+- **命令行接口**：提供一个命令行工具，接受 PDF 文件作为输入，输出 Markdown 文件。
+
+# User Experience
+- 用户通过命令行指定输入 PDF 文件和输出 Markdown 文件路径。
+- 系统自动完成转换过程，并在完成后通知用户。
+
+# Technical Architecture
+- **PDF 处理库**：使用 Python 库（如 `PyMuPDF` 或 `pdf2image`）进行 PDF 到图像的转换。
+- **OCR 服务**：集成 Google Gemini 2.5 Flash API 进行图像 OCR。
+- **Markdown 格式化**：开发自定义逻辑或使用现有库（如 `markdown-it-py`）将 OCR 结果转换为结构化 Markdown。
+- **命令行解析**：使用 `argparse` 库构建命令行接口。
+
+# Development Roadmap
+- **阶段 1: 核心功能实现**
+  - 实现 PDF 到图像的转换。
+  - 实现图像到文本的 OCR（集成 Gemini API）。
+  - 实现简单的文本到 Markdown 转换（仅支持段落）。
+  - 构建基本的命令行接口。
+- **阶段 2: 结构化 Markdown 增强**
+  - 增强 Markdown 转换逻辑，支持标题、列表、表格等。
+  - 优化 OCR 结果的后处理，提高 Markdown 质量。
+- **阶段 3: 错误处理与用户体验优化**
+  - 增加错误处理机制，例如处理无效 PDF 文件或 API 错误。
+  - 改进命令行工具的用户提示和反馈。
+
+# Logical Dependency Chain
+1. PDF 到图像转换。
+2. 图像 OCR。
+3. 文本到 Markdown 转换。
+4. 命令行接口封装。
+
+# Risks and Mitigations
+- **OCR 准确性**：Gemini API 的 OCR 准确性可能受 PDF 质量影响。通过优化图像预处理和后处理逻辑来缓解。
+- **Markdown 结构化复杂性**：将非结构化文本转换为结构化 Markdown 可能很复杂。通过迭代开发和测试来逐步完善。
+- **API 速率限制**：Gemini API 可能存在速率限制。通过实现重试机制和适当的延迟来管理。
+
+# Appendix
+- 考虑使用 `Pillow` 进行图像处理。
+- 探索不同的 Markdown 格式化策略，以适应不同类型的文档。

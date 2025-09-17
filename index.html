@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米SU7 Ultra - 性能旗舰</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Framer Motion -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+            --accent-gradient: linear-gradient(135deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+        
+        .bento-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .bento-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .gradient-bg {
+            background: var(--accent-gradient);
+        }
+        
+        .hero-section {
+            grid-column: span 12;
+            height: 80vh;
+            background-image: url('imgs/su7_ultra_main-2025-06-02T09-59-41-031Z.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 24px;
+            display: flex;
+            align-items: flex-end;
+            padding: 4rem;
+            position: relative;
+        }
+        
+        .hero-content {
+            color: white;
+            z-index: 1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            border-radius: 0 0 24px 24px;
+        }
+        
+        .stats-card {
+            grid-column: span 3;
+        }
+        
+        .feature-card {
+            grid-column: span 6;
+        }
+        
+        .full-width-card {
+            grid-column: span 12;
+        }
+        
+        .number-highlight {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="bento-grid">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="text-6xl font-bold mb-4">小米SU7 Ultra</h1>
+                <p class="text-2xl">为性能而生的旗舰轿车</p>
+                <div class="mt-8">
+                    <span class="text-4xl font-bold">¥529,900</span>
+                    <span class="ml-4">起</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Performance Stats -->
+        <div class="bento-card stats-card">
+            <i class="fas fa-tachometer-alt text-3xl mb-4 gradient-text"></i>
+            <div class="number-highlight gradient-text">1.98</div>
+            <p class="text-gray-600">0-100km/h 加速(秒)</p>
+        </div>
+        
+        <div class="bento-card stats-card">
+            <i class="fas fa-gauge-high text-3xl mb-4 gradient-text"></i>
+            <div class="number-highlight gradient-text">350</div>
+            <p class="text-gray-600">最高时速(km/h)</p>
+        </div>
+        
+        <div class="bento-card stats-card">
+            <i class="fas fa-bolt text-3xl mb-4 gradient-text"></i>
+            <div class="number-highlight gradient-text">12</div>
+            <p class="text-gray-600">10%-80%充电时间(分钟)</p>
+        </div>
+        
+        <div class="bento-card stats-card">
+            <i class="fas fa-weight-hanging text-3xl mb-4 gradient-text"></i>
+            <div class="number-highlight gradient-text">285</div>
+            <p class="text-gray-600">最大下压力(KG)</p>
+        </div>
+        
+        <!-- Design Features -->
+        <div class="bento-card feature-card">
+            <h2 class="text-2xl font-bold mb-6">设计特点</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="flex items-start space-x-4">
+                    <i class="fas fa-car text-2xl gradient-text"></i>
+                    <div>
+                        <h3 class="font-semibold">低趴设计</h3>
+                        <p class="text-gray-600">运动美学的完美诠释</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <i class="fas fa-wind text-2xl gradient-text"></i>
+                    <div>
+                        <h3 class="font-semibold">U形风刀</h3>
+                        <p class="text-gray-600">优化空气动力学性能</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <i class="fas fa-layer-group text-2xl gradient-text"></i>
+                    <div>
+                        <h3 class="font-semibold">碳纤维应用</h3>
+                        <p class="text-gray-600">17处碳纤维材料</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <i class="fas fa-fan text-2xl gradient-text"></i>
+                    <div>
+                        <h3 class="font-semibold">主动扩散器</h3>
+                        <p class="text-gray-600">提升高速稳定性</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Smart Features -->
+        <div class="bento-card feature-card">
+            <h2 class="text-2xl font-bold mb-6">智能系统</h2>
+            <div class="space-y-6">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-microchip text-2xl gradient-text"></i>
+                    <div>
+                        <h3 class="font-semibold">双英伟达Orin-X芯片</h3>
+                        <p class="text-gray-600">强大的计算平台</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-camera text-2xl gradient-text"></i>
+                    <div>
+                        <h3 class="font-semibold">全方位感知系统</h3>
+                        <p class="text-gray-600">1颗激光雷达 + 11个高清摄像头</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-robot text-2xl gradient-text"></i>
+                    <div>
+                        <h3 class="font-semibold">端到端智能驾驶</h3>
+                        <p class="text-gray-600">全场景自动驾驶体验</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Safety Features -->
+        <div class="bento-card full-width-card">
+            <h2 class="text-2xl font-bold mb-6">安全认证</h2>
+            <div class="grid grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-gray-50 rounded-xl">
+                    <i class="fas fa-shield-alt text-4xl mb-4 gradient-text"></i>
+                    <h3 class="font-semibold mb-2">中保研安全指数</h3>
+                    <p class="text-gray-600">车内乘员、车外行人、辅助安全获G+评价</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-xl">
+                    <i class="fas fa-car-crash text-4xl mb-4 gradient-text"></i>
+                    <h3 class="font-semibold mb-2">中国智能汽车指数</h3>
+                    <p class="text-gray-600">智能行车、智能泊车等四项G+评价</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-xl">
+                    <i class="fas fa-award text-4xl mb-4 gradient-text"></i>
+                    <h3 class="font-semibold mb-2">中汽中心认证</h3>
+                    <p class="text-gray-600">2024年中国十佳车身</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Framer Motion animations
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.bento-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
